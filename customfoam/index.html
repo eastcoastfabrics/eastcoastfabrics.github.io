@@ -5,15 +5,127 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Custom Foam Price Generator - Closeout Fabrics USA</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <style>
+
+
+
+
+    </style>
   </head>
   <body>
-    <h1>Hello, world!</h1>
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <div class="hero" style="background-color: #ecf0f1; padding: 40px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Custom Foam Price Generator</h1>
+            <h3>Provided by Closeout Fabrics USA</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-body" style="padding:40px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+
+            <form>
+              
+              <div class="form-section">
+                <h3>1. Type of Foam (Density)</h3>
+                <div class="form-group">  
+                  <div class="custom-controls-stacked">
+                    <label class="custom-control custom-radio">
+                      <input id="foamRegular" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Regular Foam (1.8 lb density)</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                      <input id="foamUltra" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Ultra Foam (2.6 lb density)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>2. Firmness (Compression)</h3>
+                <div class="form-group">
+                  <div class="custom-controls-stacked">
+                    <label class="custom-control custom-radio">
+                      <input id="compressionSoft" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Soft</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                      <input id="compressionMedium" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Medium</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                      <input id="compressionFirm" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Firm</span>
+                    </label>
+                    <label class="custom-control custom-radio">
+                      <input id="compressionExtraFirm" name="radio-stacked" type="radio" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Extra Firm</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>3. Size</h3>
+                <div class="form-group">
+                  <label for="size-height">Height (Thickness)</label>
+                  <input class="form-control" type="number" placeholder="1.0" step="0.5" min="0.5" value="" id="size-height">
+                </div>
+                <div class="form-group">
+                  <label for="size-width">Width (Depth)</label>
+                  <input class="form-control" type="number" placeholder="1.0" step="0.25" min="0.5" value="" id="size-width">
+                </div>
+                <div class="form-group">
+                  <label for="size-width">Length</label>
+                  <input class="form-control" type="number" placeholder="1.0" step="0.25" min="0.5" value="" id="size-length">
+                </div>
+              </div>
+
+              <script>
+
+                console.log(math.eval('2 + 3 * 4'));
+
+
+              </script>
+              
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+    <!-- Tether -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- MathJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.3/math.min.js" integrity="sha256-Cwy6nM+A4EVBjE2Kq2Oh8Igiu7ZvwFqR5nEHfCaRJjY=" crossorigin="anonymous"></script>
+
   </body>
 </html>
