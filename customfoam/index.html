@@ -64,35 +64,35 @@
 
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionSoft") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
-          var compression = '1823';
+          var compression = '1823 Soft';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionMedium") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
-          var compression = '1835';
+          var compression = '1835 Medium';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
-          var compression = '1845';
+          var compression = '1845 Firm';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionExtraFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
-          var compression = '1865';
+          var compression = '1865 Extra Firm';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionSoft") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
-          var compression = '2627';
+          var compression = '2627 Soft';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionMedium") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
-          var compression = '2635';
+          var compression = '2635 Medium';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
-          var compression = '2645';
+          var compression = '2645 Firm';
         }
 
         if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionExtraFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
-          var compression = '2670';
+          var compression = '2670 Extra Firm';
         }
 
         var sizeHeight  = document.getElementById("size-height").value;
@@ -132,7 +132,31 @@
 
     <div class="form-body">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-between">
+
+          <div class="instructions col-12 col-md-5">
+
+            <h2>Instructions</h2>
+
+            <p>This form will help you determine the price of custom cut upholstery foam. Our foam comes in a variety of types and firmness (otherwise known as compression).</p>
+
+            <p>Follow this step-by-step process to order each piece of foam:</p>
+
+            <ol>
+              <li>Select the type of foam you would like.</li>
+              <li>Select the firmness (or compression) you would like.</li>
+              <li>Enter in inches the height, width, and length you would like to purchase. Foam is able to be cut to 1/4" of an inch. 1/4" = .25, 1/2" = .5, and 3/4" = .75</li>
+              <li>Copy and paste the Price into the quantity field on eBay. The price of the foam, including shipping, is equal to the quantity because the price of the listing is $1.</li>
+              <li>Copy and paste the Custom Foam Details into the order notes when ordering on eBay. This will let us know all of the details we need to process your order. No need to send us a message.</li>
+            </ol>
+
+            <p>*Note: only include 1 piece of foam per order on eBay. This helps us process and ship your order correctly. If you would like more than one piece of foam, please place seperate orders for each piece of foam. If you order more than once piece on the same day, your order will be shipped together.</p>
+
+
+
+          </div>
+
+
           <div class="col-12 col-md-6">
 
             <form action="" id="customFoam">
@@ -202,18 +226,20 @@
 
             </form>
 
-         
-          </div>
-
-
-
-          <div class="form-results col-12 col-md-6">
+             <div class="form-results">
 
             <h3>Price: <span id="result"></span></h3>
 
             <h3>eBay Message: <span id="copyPaste"></span></h3>
 
           </div>
+
+         
+          </div>
+
+
+
+         
 
   
         </div>
