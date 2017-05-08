@@ -5,13 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Custom Foam Price Generator - Closeout Fabrics USA</title>
+    <title>Custom Cut Upholstery Foam Price Generator - Closeout Fabrics USA</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <style>
 
+   .form-section {
+      padding: 30px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .form-body {
+      padding: 30px 0;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .form-section.size .form-group {
+      margin-bottom: 30px;
+    }
+
+    .form-results {
+      padding: 30px 0;
+      background-color: ;
+    }
+
+    h2, h3 {
+      margin-bottom: 1.5rem;
+    }
 
 
 
@@ -29,26 +54,86 @@
     <!-- MathJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.12.3/math.min.js" integrity="sha256-Cwy6nM+A4EVBjE2Kq2Oh8Igiu7ZvwFqR5nEHfCaRJjY=" crossorigin="anonymous"></script>
 
+    <script>
+
+ 
+      function calcResult() {
+    
+
+        var foamType = document.querySelector('input[name="foam-type"]:checked').value;
+
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionSoft") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
+          var compression = '1823';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionMedium") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
+          var compression = '1835';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
+          var compression = '1845';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionExtraFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1")) {
+          var compression = '1865';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionSoft") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
+          var compression = '2627';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionMedium") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
+          var compression = '2635';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
+          var compression = '2645';
+        }
+
+        if ((document.querySelector('input[name="foamCompression"]:checked').value == "compressionExtraFirm") && (document.querySelector('input[name="foam-type"]:checked').value == "1.5")) {
+          var compression = '2670';
+        }
+
+        var sizeHeight  = document.getElementById("size-height").value;
+        var sizeWidth   = document.getElementById("size-width").value;
+        var sizeLength  = document.getElementById("size-length").value;
+
+        var mathResult = math.eval( ( ( ( ( sizeHeight * ( sizeWidth / 12 ) * ( sizeLength / 12 ) / 4 ) * 5 ) * 0.3 ) + ( ( ( sizeHeight * ( sizeWidth / 12 ) * ( sizeLength / 12 ) / 4 ) * 5 ) * foamType ) ) );
+
+
+        var mathRound = math.ceil(mathResult / 5 ) * 5;
+
+        document.getElementById("result").innerHTML = mathRound;
+
+        document.getElementById("copyPaste").innerHTML = 'Foam Special Order: ' + sizeHeight + '" x ' + sizeWidth + '" x ' + sizeLength + '" ' + compression;
+ 
+      }
+
+
+</script>
+
   
 
   </head>
   <body>
 
-    <div class="hero" style="background-color: #ecf0f1; padding: 40px 0;">
+    <div class="hero" style="background-color: #ecf0f1; padding: 60px 0;">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col">
-            <h1>Custom Foam Price Generator</h1>
-            <h3>Provided by Closeout Fabrics USA</h3>
+            <h1>Custom Cut Upholstery Foam Price Generator</h2>
+            <p>Provided by Closeout Fabrics USA. <a target="_blank" href="http://www.ebay.com/itm/252921438464">Visit custom cut foam eBay Listing</a>. <a target="_blank" href="http://www.ebay.com/usr/closeoutfabricsusa">Visit our eBay Store</a>.</p>
+
           </div>
         </div>
       </div>
     </div>
 
-    <div class="form-body" style="padding:40px 0;">
+    <div class="form-body">
       <div class="container">
-        <div class="row">
-          <div class="col">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6">
 
             <form action="" id="customFoam">
               
@@ -57,12 +142,12 @@
                 <div class="form-group" id="type">  
                   <div class="custom-controls-stacked">
                     <label class="custom-control custom-radio">
-                      <input id="foamRegular" value="1" name="foam-type" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="foamRegular" value="1" name="foam-type" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Regular Foam (1.8 lb density)</span>
                     </label>
                     <label class="custom-control custom-radio">
-                      <input id="foamUltra" value="1.5" name="foam-type" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="foamUltra" value="1.5" name="foam-type" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Ultra Foam (2.6 lb density)</span>
                     </label>
@@ -75,22 +160,22 @@
                 <div class="form-group" id="compression">
                   <div class="custom-controls-stacked">
                     <label class="custom-control custom-radio">
-                      <input id="compressionSoft" name="foamCompression" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="compressionSoft" value="compressionSoft" name="foamCompression" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Soft</span>
                     </label>
                     <label class="custom-control custom-radio">
-                      <input id="compressionMedium" name="foamCompression" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="compressionMedium" value="compressionMedium" name="foamCompression" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Medium</span>
                     </label>
                     <label class="custom-control custom-radio">
-                      <input id="compressionFirm" name="foamCompression" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="compressionFirm" value="compressionFirm" name="foamCompression" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Firm</span>
                     </label>
                     <label class="custom-control custom-radio">
-                      <input id="compressionExtraFirm" name="foamCompression" type="radio" class="custom-control-input" onblur="calcResult();">
+                      <input id="compressionExtraFirm" value="compressionExtraFirm" name="foamCompression" type="radio" class="custom-control-input" onchange="calcResult();">
                       <span class="custom-control-indicator"></span>
                       <span class="custom-control-description">Extra Firm</span>
                     </label>
@@ -98,60 +183,39 @@
                 </div>
               </div>
 
-              <div class="form-section">
-                <h3>3. Size</h3>
+              <div class="form-section size">
+                <h3>3. Size (in Inches)</h3>
                 <div class="form-group">
                   <label for="size-height">Height (Thickness)</label>
-                  <input class="form-control" type="number" placeholder="" step="0.5" min="0.5" value="" id="size-height" onblur="calcResult();">
+                  <input class="form-control" type="number" placeholder="" step="0.5" min="0.5" value="" id="size-height" onchange="calcResult();">
                 </div>
                 <div class="form-group">
                   <label for="size-width">Width (Depth)</label>
-                  <input class="form-control" type="number" placeholder="" step="0.25" min="0.5" value="" id="size-width" onblur="calcResult();">
+                  <input class="form-control" type="number" placeholder="" step="0.25" min="0.5" value="" id="size-width" onchange="calcResult();">
                 </div>
                 <div class="form-group">
                   <label for="size-width">Length</label>
-                  <input class="form-control" type="number" placeholder="" step="0.25" min="0.5" value="" id="size-length" onblur="calcResult();">
+                  <input class="form-control" type="number" placeholder="" step="0.25" min="0.5" value="" id="size-length" onchange="calcResult();">
                 </div>
               </div>
               
-             
 
             </form>
 
-
-            <h2>Result</h2>
-
-            <div id="result" style="color: blue; font-size: 30px; padding: 40px; background-color: #eee;"></div>
-
-            <script>
-
-             
-             function calcResult() {
-                
-
-                  var foamType = document.querySelector('input[name="foam-type"]:checked').value;
+         
+          </div>
 
 
-                  var sizeHeight  = document.getElementById("size-height").value;
-                  var sizeWidth   = document.getElementById("size-width").value;
-                  var sizeLength  = document.getElementById("size-length").value;
 
-                  var mathResult = math.eval( ( ( ( ( sizeHeight * ( sizeWidth / 12 ) * ( sizeLength / 12 ) / 4 ) * 5 ) * 0.3 ) + ( ( ( sizeHeight * ( sizeWidth / 12 ) * ( sizeLength / 12 ) / 4 ) * 5 ) * foamType ) ) );
+          <div class="form-results col-12 col-md-6">
 
+            <h3>Price: <span id="result"></span></h3>
 
-                  var mathRound = math.ceil(mathResult / 5 ) * 5;
-
-                  document.getElementById("result").innerHTML = mathRound;
-             }
-
-              
-
-
-            </script>
-
-
+            <h3>eBay Message: <span id="copyPaste"></span></h3>
 
           </div>
+
+  
         </div>
       </div>
     </div>
